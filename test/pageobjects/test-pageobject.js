@@ -1,4 +1,5 @@
-const { expect } = require("@playwright/test")  
+// @ts-checkz
+const { expect, default: test, } = require("@playwright/test")  
 
 const homepageElement = '.borderTodo'
 const todoInput = '.todo-input'
@@ -9,13 +10,15 @@ module.exports = {
   async openUrl(url) {
         await page.goto(url)
         console.log('I am a dummy function.');
-  }
+  },
 
 // test('homepage has Playwright in title and get started link linking to the intro page', async ({ page }) => {
 //   await page.goto('https://playwright.dev/');
 
-//   // Expect a title "to contain" a substring.
-//   await expect(page).toHaveTitle(/Playwright/);
+  // Expect a title "to contain" a substring.
+  async newF() {
+    await expect(page).toHaveTitle(/Playwright/);
+}
 
 //   // create a locator
 //   const getStarted = page.locator('text=Get Started');

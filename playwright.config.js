@@ -1,6 +1,5 @@
-// @ts-check
+// this config is only used for playwright commands
 const { devices } = require('@playwright/test');
-
 
 /**
  * Read environment variables from file.
@@ -16,13 +15,10 @@ const { devices } = require('@playwright/test');
 const config = {
   testDir: './test',
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 300 * 1000,
   expect: {
-    /**
-     * Maximum time expect() should wait for the condition to be met.
-     * For example in `await expect(locator).toHaveText();`
-     */
-    timeout: 5000
+     /* Maximum time expect() should wait for the condition to be met.*/
+    timeout: 30 * 1000
   },
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -51,6 +47,7 @@ const config = {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        
       }
     }
 
